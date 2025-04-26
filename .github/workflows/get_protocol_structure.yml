@@ -1,0 +1,117 @@
+name: Get protocol structure
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Optional version'
+        required: false
+        type: string
+  issues:
+    types:
+      - opened
+      
+permissions:
+  contents: write
+  
+jobs:
+  get_protocol_structure:
+    timeout-minutes: 15
+    runs-on: windows-latest
+
+    env:
+      DOMAIN: ${{ secrets.domain }}
+
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set version
+        shell: pwsh
+        run: |
+          $version = "${{ inputs.version }}"
+          if (-not $version) { $version = Invoke-RestMethod -Uri "https://${env:DOMAIN}/vc/current.txt" -UseBasicParsing }
+          Write-Output "version=$version" >> $env:GITHUB_ENV
+
+      - name: Validate tag does not already exist
+        shell: pwsh
+        run: |
+          git fetch --tags
+          $existingTags = git tag --list
+          if ($existingTags -contains "${env:version}") {
+              throw "❌ Error: Tag '${env:version}' already exists!"
+          }
+          else {
+              Write-Output "✅ Tag '${env:version}' does not exist. Proceeding."
+          }
+
+      - name: Download client
+        run: curl -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version$env:VERSION.zip
+
+      - name: Unzip client
+        run: |
+          unzip client.zip
+          Rename-Item -path ".\DarkOrbit_*" -NewName "client"
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install frida-tools
+        run: pip install frida-tools
+
+      - name: Download files
+        run: |
+          curl -o 1000 ${{ secrets.script_url }}
+          curl -o 1001 ${{ secrets.py_script_url }}
+
+      - name: Run frida
+        run: frida -f .\client\DarkOrbit.exe -l 1000 -q -t 60 --kill-on-exit
+        
+      - name: Build interfaces
+        id: darkorbit-protocol
+        run: python3 1001 darkorbit-protocol.json
+
+      - name: Set version in build.gradle.kts
+        shell: bash
+        run: sed -i "s/version = \".*\"/version = \"${{ env.VERSION }}\"/" build.gradle.kts
+
+      - name: Create commit & tag and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add src
+          git add build.gradle.kts
+          git status --porcelain
+          git commit -m "Update to ${{ env.VERSION }}" -m "Version hash: ${{ steps.darkorbit-protocol.outputs.hash }}"
+          git push
+          git tag $env:VERSION
+          git push origin $env:VERSION
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.VERSION }}
+          name: ${{ env.VERSION }}
+          body: ${{ steps.darkorbit-protocol.outputs.hash }}
+          files: darkorbit-protocol.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Close GitHub Issue
+        if: github.event_name == 'issues' && always()
+        run: |
+          $uri = "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}"
+          $headers = @{
+            Authorization = "token ${{ secrets.GITHUB_TOKEN }}"
+            Accept = "application/vnd.github+json"
+            "User-Agent" = "github-actions"
+          }
+          $body = '{"state": "closed"}'
+          Invoke-RestMethod -Uri $uri -Method PATCH -Headers $headers -Body $body
