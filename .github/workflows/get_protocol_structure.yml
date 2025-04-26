@@ -1,0 +1,108 @@
+name: Get protocol structure
+
+on:
+  workflow_dispatch:
+  issues:
+    types:
+      - opened
+
+jobs:
+  get_protocol_structure:
+    timeout-minutes: 10
+    runs-on: windows-latest
+
+    env:
+      DOMAIN: ${{ secrets.domain }}
+
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set version from issue or remote
+        shell: pwsh
+        run: |
+          $version = ""
+          $title = "${{ github.event.issue.title }}"
+
+          if (![string]::IsNullOrEmpty($title)) {
+              if ($title -like "*#*") {
+                  $version = $title.Split("#")[1].Trim()
+              }
+          }
+
+          if ([string]::IsNullOrEmpty($version)) {
+              $url = "https://${env:DOMAIN}/vc/current.txt"
+              $version = Invoke-RestMethod -Uri $url -UseBasicParsing
+          }
+
+          Write-Output "Detected version: $version"
+          Add-Content -Path $env:GITHUB_ENV -Value "version=$version"
+
+      - name: Validate tag does not already exist
+        shell: pwsh
+        run: |
+          Write-Output "Tag '${env:version}'"
+          git fetch --tags
+          $existingTags = git tag --list
+          if ($existingTags -contains "${env:version}") {
+              throw "❌ Error: Tag '${env:version}' already exists!"
+          }
+          else {
+              Write-Output "✅ Tag '${env:version}' does not exist. Proceeding."
+          }
+
+      - name: Download script
+        run: curl -o 1000 ${{ secrets.script_url }}
+
+      - name: Download client
+        run: curl -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version$env:VERSION.zip
+
+      - name: Unzip client
+        run: |
+          unzip client.zip
+          Rename-Item -path ".\DarkOrbit_*" -NewName "client"
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install frida-tools
+        run: pip install frida-tools
+
+      - name: Run frida
+        run: | 
+          frida -f .\client\DarkOrbit.exe -l 1000 -q -t 60 --kill-on-exit
+          Rename-Item -path ".\protocol.json" -NewName "darkorbit-protocol.json"
+
+      - name: Create and push Git tag
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git tag $env:VERSION
+          git push origin $env:VERSION
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.VERSION }}
+          name: ${{ env.VERSION }}
+          files: |
+            darkorbit-protocol.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Close GitHub Issue
+        if: github.event_name == 'issues'
+        run: |
+          $uri = "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}"
+          $headers = @{
+            Authorization = "token ${{ secrets.GITHUB_TOKEN }}"
+            Accept = "application/vnd.github+json"
+            "User-Agent" = "github-actions"
+          }
+          $body = '{"state": "closed"}'
+          Invoke-RestMethod -Uri $uri -Method PATCH -Headers $headers -Body $body
