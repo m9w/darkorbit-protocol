@@ -8,7 +8,7 @@ on:
 
 jobs:
   get_protocol_structure:
-    timeout-minutes: 10
+    timeout-minutes: 15
     runs-on: windows-latest
 
     env:
@@ -24,27 +24,12 @@ jobs:
       - name: Set version from issue or remote
         shell: pwsh
         run: |
-          $version = ""
-          $title = "${{ github.event.issue.title }}"
-
-          if (![string]::IsNullOrEmpty($title)) {
-              if ($title -like "*#*") {
-                  $version = $title.Split("#")[1].Trim()
-              }
-          }
-
-          if ([string]::IsNullOrEmpty($version)) {
-              $url = "https://${env:DOMAIN}/vc/current.txt"
-              $version = Invoke-RestMethod -Uri $url -UseBasicParsing
-          }
-
-          Write-Output "Detected version: $version"
+          $version = Invoke-RestMethod -Uri "https://${env:DOMAIN}/vc/current.txt" -UseBasicParsing
           Add-Content -Path $env:GITHUB_ENV -Value "version=$version"
 
       - name: Validate tag does not already exist
         shell: pwsh
         run: |
-          Write-Output "Tag '${env:version}'"
           git fetch --tags
           $existingTags = git tag --list
           if ($existingTags -contains "${env:version}") {
@@ -96,7 +81,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Close GitHub Issue
-        if: github.event_name == 'issues'
+        if: github.event_name == 'issues' && always()
         run: |
           $uri = "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}"
           $headers = @{
