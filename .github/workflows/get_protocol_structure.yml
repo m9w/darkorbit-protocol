@@ -59,9 +59,7 @@ jobs:
         run: pip install frida-tools
 
       - name: Run frida
-        run: | 
-          frida -f .\client\DarkOrbit.exe -l 1000 -q -t 60 --kill-on-exit
-          Rename-Item -path ".\protocol.json" -NewName "darkorbit-protocol.json"
+        run: frida -f .\client\DarkOrbit.exe -l 1000 -q -t 60 --kill-on-exit
 
       - name: Create and push Git tag
         run: |
