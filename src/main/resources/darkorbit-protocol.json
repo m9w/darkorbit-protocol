@@ -1,5 +1,5 @@
 {
-  "hash": "b2bb7aadff539e61d9a4148f36aa6c2d",
+  "hash": "d9d76ed3e773cf4694da99b3abd8ee96",
   "Enums#0": {
     "CombatStateType": [
       "TARGET_OUT_OF_RANGE",
@@ -1075,7 +1075,8 @@
     ],
     "HallOfFameType": [
       "GalacticStrife_repRanking",
-      "GalacticStrife_repPerKillRanking"
+      "GalacticStrife_repPerKillRanking",
+      "FrozenLabyrinth"
     ],
     "CombatEvent": [
       "COMBAT_START",
@@ -6956,7 +6957,7 @@
   "HallOfFameDataCommand#45134": {
     "userName": "String",
     "rank": "i32/4",
-    "time": "String",
+    "time": "i64",
     "userId": "i64",
     "value": "i64"
   },
