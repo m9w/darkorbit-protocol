@@ -1,0 +1,20 @@
+package com.darkorbit
+
+enum class POIDesign {
+	/* 0 */ NONE,
+	/* 1 */ ASTEROIDS,
+	/* 2 */ ASTEROIDS_BLUE,
+	/* 3 */ ASTEROIDS_MIXED_WITH_SCRAP,
+	/* 4 */ SCRAP,
+	/* 5 */ NEBULA,
+	/* 6 */ SIMPLE,
+	/* 7 */ SECTOR_CONTROL_HOME_ZONE,
+	/* 8 */ SECTOR_CONTROL_SECTOR_ZONE,
+	/* 9 */ ACTIVATION_ZONE,
+	/* 10 */ OUTLINE_ZONE,
+	/* 11 */ PET_DISRUPTION_ZONE,
+	/* 12 */ STREUNER_ASTEROIDS,
+	/* 13 */ SIMPLE_LOW_ONLY,
+	/* 14 */ Z_GATE_ASTEROIDS,
+	/* 15 */ Z_GATE_ASTEROIDS_SPARSE,
+}

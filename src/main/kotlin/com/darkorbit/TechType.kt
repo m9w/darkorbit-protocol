@@ -1,0 +1,12 @@
+package com.darkorbit
+
+enum class TechType {
+	/* 0 */ ENERGY_LEECH_ARRAY,
+	/* 1 */ ENERGY_CHAIN_IMPULSE,
+	/* 2 */ ROCKET_PROBABILITY_MAXIMIZER,
+	/* 3 */ SHIELD_BACKUP,
+	/* 4 */ SPEED_LEECH,
+	/* 5 */ BATTLE_REPBOT,
+	/* 6 */ CLINGING_IMPULSE_DRONE,
+	/* 7 */ ANTI_MINE_TRANSMITTER,
+}

@@ -1,0 +1,25 @@
+package com.darkorbit
+
+enum class AttackTypeModuleAttackType {
+	/* 0 */ ROCKET,
+	/* 1 */ LASER,
+	/* 2 */ MINE,
+	/* 3 */ RADIATION,
+	/* 4 */ PLASMA,
+	/* 5 */ ECI,
+	/* 6 */ SL,
+	/* 7 */ CID,
+	/* 8 */ SINGULARITY,
+	/* 9 */ KAMIKAZE,
+	/* 10 */ REPAIR,
+	/* 11 */ DECELERATION,
+	/* 12 */ SHIELD_ABSORBER_ROCKET_CREDITS,
+	/* 13 */ SHIELD_ABSORBER_ROCKET_URIDIUM,
+	/* 14 */ STICKY_BOMB,
+	/* 15 */ POLARITY,
+	/* 16 */ INCINERATE,
+	/* 17 */ SPREAD,
+	/* 18 */ SLOW_AND_BLIND_ATTACK,
+	/* 19 */ HEAT_RELEASE,
+	/* 20 */ MULTIPLE_ROCKET,
+}

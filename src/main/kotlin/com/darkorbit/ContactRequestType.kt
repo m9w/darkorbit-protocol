@@ -1,0 +1,11 @@
+package com.darkorbit
+
+enum class ContactRequestType {
+	/* 0 */ FRIEND_REQUEST_CREATE,
+	/* 1 */ PENDING_REQUEST_ACCEPT,
+	/* 2 */ PENDING_REQUEST_DECLINE,
+	/* 3 */ RENDING_REQUEST_REMOVE,
+	/* 4 */ FRIEND_REMOVE,
+	/* 5 */ BLACKLIST_ADD_CONTACT,
+	/* 6 */ BLACKLIST_REMOVE_CONTACT,
+}

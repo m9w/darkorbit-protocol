@@ -1,0 +1,17 @@
+package com.darkorbit
+
+enum class RankRewardCommandRankType {
+	/* 0 */ HUNT_PLAYER,
+	/* 1 */ HUNT_CLAN,
+	/* 2 */ GAUNTLET_OF_PLUTUS,
+	/* 3 */ PVP_SUMMER_EVENT_REPUTATION,
+	/* 4 */ PVP_SUMMER_EVENT_REPUTATION_PER_KILL,
+	/* 5 */ PAYLOAD_ESCORT,
+	/* 6 */ ETERNAL_GATE,
+	/* 7 */ ETERNAL_BLACKLIGHT,
+	/* 8 */ TIERED_ARENA_EVENT_REPUTATION,
+	/* 9 */ ROGUE_LITE,
+	/* 10 */ WORLD_BOSS_DAILY,
+	/* 11 */ WORLD_BOSS_EVENT,
+	/* 12 */ TITLE_FRENZY,
+}

@@ -1,0 +1,27 @@
+package com.darkorbit
+
+enum class JumpGateType {
+	/* 0 */ NORMAL,
+	/* 1 */ HOME_GATE,
+	/* 2 */ RANDOM_GATE,
+	/* 3 */ GALAXY_GATE,
+	/* 4 */ GALAXY_GATE_1,
+	/* 5 */ GALAXY_GATE_2,
+	/* 6 */ GALAXY_GATE_3,
+	/* 7 */ GALAXY_GATE_4,
+	/* 8 */ GALAXY_GATE_5,
+	/* 9 */ GROUP_GATE,
+	/* 10 */ TEAM_DEATHMATCH,
+	/* 11 */ TEAM_DEATHMATCH_1,
+	/* 12 */ TEAM_DEATHMATCH_2,
+	/* 13 */ INVASIONMAP_GATE,
+	/* 14 */ INVASIONMAP_GATE_1,
+	/* 15 */ INVASIONMAP_GATE_2,
+	/* 16 */ INVASIONMAP_GATE_3,
+	/* 17 */ INVASIONMAP_LVL_GATE,
+	/* 18 */ INVISIBLE,
+	/* 19 */ NC_GATE,
+	/* 20 */ ORBSTER_GATE,
+	/* 21 */ BDAY_IV_GATE,
+	/* 22 */ BREACH_GATE,
+}

@@ -1,0 +1,25 @@
+package com.darkorbit
+
+enum class PetGearType {
+	/* 0 */ BEHAVIOR,
+	/* 1 */ PASSIVE,
+	/* 2 */ GUARD,
+	/* 3 */ GEAR,
+	/* 4 */ AUTO_LOOT,
+	/* 5 */ AUTO_RESOURCE_COLLECTION,
+	/* 6 */ ENEMY_LOCATOR,
+	/* 7 */ RESOURCE_LOCATOR,
+	/* 8 */ TRADE_POD,
+	/* 9 */ REPAIR_PET,
+	/* 10 */ KAMIKAZE,
+	/* 11 */ COMBO_SHIP_REPAIR,
+	/* 12 */ COMBO_GUARD,
+	/* 13 */ ADMIN,
+	/* 14 */ FRIENDLY_SACRIFICE,
+	/* 15 */ RETARGETING,
+	/* 16 */ HP_LINK,
+	/* 17 */ MEGA_MINE,
+	/* 18 */ COMBAT_BEACON,
+	/* 19 */ HP_BEACON,
+	/* 20 */ HEAT_RELEASE,
+}
