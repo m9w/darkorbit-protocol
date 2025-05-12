@@ -376,4 +376,7 @@ enum class ShipIcon {
 	/* 372 */ SPECTRUM_PLUS,
 	/* 373 */ RABBIT,
 	/* 374 */ ENDLESS_COLOSSUS_DUPLICANT,
+	/* 375 */ PLAYER_CAMP_NPC,
+	/* 376 */ MISSILE_STORM,
+	/* 377 */ PALADIN,
 }

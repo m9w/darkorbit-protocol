@@ -15,6 +15,7 @@ interface ShipCreateCommand : ProtocolPacket {
 	var motherShipId: Int
 	var npc: Boolean
 	var positionIndex: Int
+	var specialNpcType: String
 	var typeId: String
 	var useSystemFont: Boolean
 	var userId: Int

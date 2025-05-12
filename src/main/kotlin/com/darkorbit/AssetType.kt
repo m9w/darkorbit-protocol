@@ -75,4 +75,5 @@ enum class AssetType {
 	/* 71 */ PET_HP_BEACON,
 	/* 72 */ PET_COMBAT_BEACON,
 	/* 73 */ NOXIOUS_NEBULA,
+	/* 74 */ EXPEDITION_HOME,
 }

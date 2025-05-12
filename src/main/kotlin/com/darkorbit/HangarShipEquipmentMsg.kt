@@ -1,6 +1,7 @@
 package com.darkorbit
 
 interface HangarShipEquipmentMsg : ProtocolPacket {
+	var QuantumFluidCore: MutableList<Int>
 	var active: Boolean
 	var extra: MutableList<Int>
 	var generators: MutableList<Int>

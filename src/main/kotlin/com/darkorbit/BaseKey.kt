@@ -190,4 +190,9 @@ enum class BaseKey {
 	/* 186 */ err_changing_company_tips,
 	/* 187 */ window_a_new_hope_answer_popup_full,
 	/* 188 */ window_a_new_hope_answer_popup_unvalid,
+	/* 189 */ dse_ticket_lack,
+	/* 190 */ dse_ship_not_exist,
+	/* 191 */ dse_ship_destroy,
+	/* 192 */ dse_skip_unavailable,
+	/* 193 */ dse_ship_num_fault,
 }

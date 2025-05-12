@@ -14,4 +14,5 @@ enum class RankRewardCommandRankType {
 	/* 10 */ WORLD_BOSS_DAILY,
 	/* 11 */ WORLD_BOSS_EVENT,
 	/* 12 */ TITLE_FRENZY,
+	/* 13 */ EXPEDITION,
 }

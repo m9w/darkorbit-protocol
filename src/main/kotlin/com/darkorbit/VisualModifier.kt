@@ -131,4 +131,6 @@ enum class VisualModifier {
 	/* 127 */ ROCKET_ATK_MINIONS,
 	/* 128 */ M_ROCKET,
 	/* 129 */ M_LASER,
+	/* 130 */ RIPPER,
+	/* 131 */ LAST_STAND,
 }
