@@ -1,6 +1,7 @@
 package com.darkorbit
 
 interface HallOfFameDataCommand : ProtocolPacket {
+	var points: Long
 	var rank: Int
 	var time: String
 	var userId: Long

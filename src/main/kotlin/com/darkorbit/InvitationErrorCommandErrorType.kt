@@ -11,4 +11,5 @@ enum class InvitationErrorCommandErrorType {
 	/* 7 */ MAX_INVITATIONS_CANDIDATE,
 	/* 8 */ CANDIDATE_BLOCKING,
 	/* 9 */ DUPLICATE_INVITATION,
+	/* 10 */ INVITER_IN_PAYLOAD,
 }
