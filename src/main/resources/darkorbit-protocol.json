@@ -1,5 +1,5 @@
 {
-  "hash": "d9d76ed3e773cf4694da99b3abd8ee96",
+  "hash": "bd3279cfafd70ac2c4f10c5f57e9c4d2",
   "Enums#0": {
     "CombatStateType": [
       "TARGET_OUT_OF_RANGE",
@@ -6957,7 +6957,7 @@
   "HallOfFameDataCommand#45134": {
     "userName": "String",
     "rank": "i32/4",
-    "time": "i64",
+    "time": "String",
     "userId": "i64",
     "value": "i64"
   },
