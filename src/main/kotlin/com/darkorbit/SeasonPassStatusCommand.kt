@@ -6,6 +6,7 @@ interface SeasonPassStatusCommand : ProtocolPacket {
 	var marketingImage: String
 	var pointsCost: MutableList<Int>
 	var seasonName: String
+	var showTips: Boolean
 	var timeToEventEnd: Long
 	var uridiumCost: MutableList<Int>
 }
