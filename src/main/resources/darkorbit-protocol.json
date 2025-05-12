@@ -5475,7 +5475,7 @@
     "interest": "String",
     "clanName": "String",
     "uniqueProfileUrl": "String",
-    "profilePicBlock": "i32/21",
+    "profilePicBlock": "i32/-1",
     "privacySettingsEquipment": "Enum:PrivacySettingsType",
     "privacySettingsMessages": "Enum:PrivacySettingsType",
     "sex": "String"
