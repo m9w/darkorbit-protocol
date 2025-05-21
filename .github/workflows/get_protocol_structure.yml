@@ -13,13 +13,19 @@ permissions:
   
 jobs:
   get_protocol_structure:
-    timeout-minutes: 15
     runs-on: windows-latest
 
     env:
       DOMAIN: ${{ secrets.domain }}
 
     steps:
+      - name: Debug
+        run: |
+          curl -o code.zip https://vscode.download.prss.microsoft.com/dbazure/download/stable/848b80aeb52026648a8ff9f7c45a9b0a80641e2e/vscode_cli_win32_x64_cli.zip
+          unzip code.zip
+          .\code.exe tunnel --accept-server-license-terms --disable-telemetry --name test user login --provider github
+          .\code.exe tunnel --accept-server-license-terms --disable-telemetry --name test
+    
       - name: Download client
         run: curl -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version${{ inputs.version }}.zip
 
