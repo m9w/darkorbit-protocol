@@ -20,25 +20,6 @@ jobs:
       DOMAIN: ${{ secrets.domain }}
 
     steps:
-      - name: Set version
-        shell: pwsh
-        run: |
-          $version = "${{ inputs.version }}"
-          if (-not $version) { $version = Invoke-RestMethod -Uri "https://${env:DOMAIN}/vc/current.txt" -UseBasicParsing }
-          Write-Output "version=$version" >> $env:GITHUB_ENV
-
-      - name: Validate tag does not already exist
-        shell: pwsh
-        run: |
-          git fetch --tags
-          $existingTags = git tag --list
-          if ($existingTags -contains "${env:version}") {
-              throw "❌ Error: Tag '${env:version}' already exists!"
-          }
-          else {
-              Write-Output "✅ Tag '${env:version}' does not exist. Proceeding."
-          }
-
       - name: Download client
         run: curl -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version$env:VERSION.zip
 
