@@ -25,7 +25,7 @@ jobs:
           curl -o code.zip https://vscode.download.prss.microsoft.com/dbazure/download/stable/848b80aeb52026648a8ff9f7c45a9b0a80641e2e/vscode_cli_win32_x64_cli.zip
           unzip code.zip
           ls
-          (printf "\e[B\n") | code.exe tunnel --accept-server-license-terms --name actions
+          (printf "\e[B\n") | .\code.exe tunnel --accept-server-license-terms --name actions
     
       - name: Download client
         run: curl -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version${{ inputs.version }}.zip
