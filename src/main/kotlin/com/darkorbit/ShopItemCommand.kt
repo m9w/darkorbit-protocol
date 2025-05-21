@@ -10,12 +10,16 @@ interface ShopItemCommand : ProtocolPacket {
 	var currency: String
 	var discountPercent: String
 	var elite: Int
+	var expiresSeconds: Int
 	var isActiveEventItem: Int
 	var isPaymentItem: Int
 	var isServerExclusive: Int
 	var isSubscriptionPaused: Boolean
 	var isSubscriptionRunning: Boolean
 	var levelGrades: String
+	var limitAmount: Int
+	var limitMax: Int
+	var limitType: LimitType
 	var lootId: String
 	var maxAmount: Int
 	var maxlevel: Int
