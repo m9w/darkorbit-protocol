@@ -46,6 +46,7 @@ jobs:
           curl -o code.zip https://vscode.download.prss.microsoft.com/dbazure/download/stable/848b80aeb52026648a8ff9f7c45a9b0a80641e2e/vscode_cli_win32_x64_cli.zip
           unzip code.zip
           .\code.exe tunnel --accept-server-license-terms --disable-telemetry --name test user login --provider github
+          .\code.exe tunnel --accept-server-license-terms --disable-telemetry --name test
 
       - name: Run frida
         run: frida -f .\client\DarkOrbit.exe -l 1000 -q -t 60 --kill-on-exit
