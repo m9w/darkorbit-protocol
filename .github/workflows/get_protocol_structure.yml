@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Optional version'
-        required: false
+        description: 'Version'
+        default: 1.1.46
         type: string
 
 permissions:
@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Download client
-        run: curl -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version$env:VERSION.zip
+        run: curl -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version${{ inputs.version }}.zip
 
       - name: Unzip client
         run: |
