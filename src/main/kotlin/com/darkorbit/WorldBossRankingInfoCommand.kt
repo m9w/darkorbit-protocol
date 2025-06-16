@@ -6,4 +6,5 @@ interface WorldBossRankingInfoCommand : ProtocolPacket {
 	var nextRank: WorldBossRankingInfoModule
 	var prevRank: WorldBossRankingInfoModule
 	var rankingInfoList: MutableList<WorldBossRankingInfoModule>
+	var titleStr: String
 }

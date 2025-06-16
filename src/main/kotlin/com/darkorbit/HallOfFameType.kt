@@ -7,4 +7,5 @@ enum class HallOfFameType {
 	/* 3 */ EternalGate,
 	/* 4 */ MimesisMutiny,
 	/* 5 */ PayloadEscort,
+	/* 6 */ PublicWorldBoss,
 }
