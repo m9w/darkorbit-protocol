@@ -4,8 +4,8 @@ interface AssetInfoCommand : ProtocolPacket {
 	var assetId: Int
 	var designId: Int
 	var expansionStage: Int
-	var hitpoints: Int
-	var maxHitpoints: Int
+	var hitpoints: Long
+	var maxHitpoints: Long
 	var maxShieldEnergy: Int
 	var shieldEnergy: Int
 	var shielded: Boolean

@@ -6,9 +6,9 @@ interface AttackHitNoLockCommand : ProtocolPacket {
 	var damage: Int
 	var skilled: Boolean
 	var strike: Boolean
-	var victimHitpoints: Int
+	var victimHitpoints: Long
 	var victimId: Int
-	var victimMaxHitpoints: Int
+	var victimMaxHitpoints: Long
 	var victimMaxNanohull: Int
 	var victimMaxShield: Int
 	var victimNanoHull: Int

@@ -1,8 +1,8 @@
 package com.darkorbit
 
 interface ShipSelectionCommand : ProtocolPacket {
-	var hitpoints: Int
-	var hitpointsMax: Int
+	var hitpoints: Long
+	var hitpointsMax: Long
 	var maxNanoHull: Int
 	var nanoHull: Int
 	var shield: Int

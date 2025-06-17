@@ -5,7 +5,7 @@ interface HangarShipPetView : ProtocolPacket {
 	var exp: Long
 	var expNextLevel: Long
 	var fuel: Int
-	var hitPoints: Int
+	var hitPoints: Long
 	var lasers: Int
 	var level: Int
 	var maxDamageDistribution: Int
@@ -13,7 +13,7 @@ interface HangarShipPetView : ProtocolPacket {
 	var maxGearSlots: Int
 	var maxGeneratorSlots: Int
 	var maxHeatSlots: Int
-	var maxHitPoints: Int
+	var maxHitPoints: Long
 	var maxLaserSlots: Int
 	var maxLasers: Int
 	var maxProtocolSlots: Int

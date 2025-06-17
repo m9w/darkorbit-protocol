@@ -1,5 +1,5 @@
 {
-  "hash": "0d8861bb5cadfe2a3dd0846cea8f76b8",
+  "hash": "071849030a9aae5816390dd80a3dafbd",
   "Enums#0": {
     "CombatStateType": [
       "TARGET_OUT_OF_RANGE",
@@ -2390,8 +2390,8 @@
   },
   "AttackHitAssetCommand#5": {
     "assetId": "i32/3",
-    "hitpointsMax": "i32/31",
-    "hitpointsNow": "i32/28"
+    "hitpointsMax": "i64",
+    "hitpointsNow": "i64"
   },
   "AttackRocketCommand#6": {
     "attackerId": "i32/16",
@@ -2466,7 +2466,7 @@
     "attackType": "AttackTypeModule",
     "attackerId": "i32/25",
     "victimId": "i32/3",
-    "victimHitpoints": "i32/13",
+    "victimHitpoints": "i64",
     "victimShield": "i32/19",
     "victimNanoHull": "i32/8",
     "damage": "i32/8",
@@ -2546,8 +2546,8 @@
     "speed": "i32/20",
     "shield": "i32/18",
     "shieldMax": "i32/19",
-    "hitPoints": "i32/23",
-    "hitMax": "i32/17",
+    "hitPoints": "i64",
+    "hitMax": "i64",
     "cargoSpace": "i32/22",
     "cargoSpaceMax": "i32/14",
     "nanoHull": "i32/11",
@@ -2580,8 +2580,8 @@
     "shipType": "i32/27",
     "shield": "i32/25",
     "shieldMax": "i32/17",
-    "hitpoints": "i32/17",
-    "hitpointsMax": "i32/19",
+    "hitpoints": "i64",
+    "hitpointsMax": "i64",
     "nanoHull": "i32/31",
     "maxNanoHull": "i32/29",
     "shieldSkill": "Boolean"
@@ -2672,8 +2672,8 @@
     "type": "AssetTypeModule",
     "designId": "i32/23",
     "expansionStage": "i32/2",
-    "hitpoints": "i32/25",
-    "maxHitpoints": "i32/27",
+    "hitpoints": "i64",
+    "maxHitpoints": "i64",
     "shielded": "Boolean",
     "shieldEnergy": "i32/21",
     "maxShieldEnergy": "i32/20"
@@ -3727,8 +3727,8 @@
     "teamRedMemersCount": "i32/29"
   },
   "HitpointInfoCommand#1300": {
-    "hitpoints": "i32/23",
-    "hitpointsMax": "i32/1",
+    "hitpoints": "i64",
+    "hitpointsMax": "i64",
     "nanoHull": "i32/19",
     "nanoHullMax": "i32/6"
   },
@@ -3822,7 +3822,7 @@
   "CCInitRequest#1905": {},
   "HangarShipPetView#1933": {
     "petHeatSlotPrice": "i32/24",
-    "maxHitPoints": "i32/20",
+    "maxHitPoints": "i64",
     "shieldGenerators": "i32/1",
     "maxGearSlots": "i32/15",
     "maxDamageDistribution": "i32/21",
@@ -3845,7 +3845,7 @@
     "petProtocolsSlotPrice": "i32/28",
     "maxProtocolSlots": "i32/6",
     "name": "String",
-    "hitPoints": "i32/2"
+    "hitPoints": "i64"
   },
   "BattlePassQuestModule#1942": {
     "questDefinition": "QuestDefinitionModule",
@@ -5423,9 +5423,9 @@
   "HealthModule#18734": {
     "super": "PlayerAttributeModule",
     "shieldMax": "i32/18",
-    "hpMax": "i32/31",
+    "hpMax": "i64",
     "nanoHull": "i32/6",
-    "hp": "i32/2",
+    "hp": "i64",
     "nanoHullMax": "i32/8",
     "shield": "i32/16"
   },
@@ -6305,7 +6305,7 @@
     "victimNanoHull": "i32/28",
     "victimShield": "i32/26",
     "attackType": "AttackTypeModule",
-    "victimMaxHitpoints": "i32/22",
+    "victimMaxHitpoints": "i64",
     "attackerId": "i32/21",
     "strike": "Boolean",
     "skilled": "Boolean",
@@ -6313,7 +6313,7 @@
     "damage": "i32/26",
     "victimId": "i32/13",
     "victimMaxShield": "i32/4",
-    "victimHitpoints": "i32/12"
+    "victimHitpoints": "i64"
   },
   "AssetCreateCommand#32175": {
     "userName": "String",

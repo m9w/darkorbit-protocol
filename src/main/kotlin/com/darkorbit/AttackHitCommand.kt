@@ -6,7 +6,7 @@ interface AttackHitCommand : ProtocolPacket {
 	var damage: Int
 	var skilled: Boolean
 	var strike: Boolean
-	var victimHitpoints: Int
+	var victimHitpoints: Long
 	var victimId: Int
 	var victimNanoHull: Int
 	var victimShield: Int

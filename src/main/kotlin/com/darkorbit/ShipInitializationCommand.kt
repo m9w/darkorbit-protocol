@@ -13,8 +13,8 @@ interface ShipInitializationCommand : ProtocolPacket {
 	var expansionStage: Int
 	var factionId: Int
 	var galaxyGatesDone: Int
-	var hitMax: Int
-	var hitPoints: Int
+	var hitMax: Long
+	var hitPoints: Long
 	var honourPoints: Long
 	var jackpot: Float
 	var level: Int
