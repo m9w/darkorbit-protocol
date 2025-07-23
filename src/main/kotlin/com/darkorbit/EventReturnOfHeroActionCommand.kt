@@ -4,6 +4,7 @@ interface EventReturnOfHeroActionCommand : ProtocolPacket {
 	var activityStatus: EventReturnOfHeroActionCommandActivityStatus
 	var bootKeyAmount: Long
 	var bootKeyLootId: String
+	var btnEnable: Boolean
 	var errorMessage: BaseStackCommand
 	var eventReturnOfHeroContributorListCommand: EventReturnOfHeroContributorListCommand
 	var eventReturnOfHeroQuestCommand: EventReturnOfHeroQuestCommand
