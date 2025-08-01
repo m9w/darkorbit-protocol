@@ -60,4 +60,5 @@ enum class OreType {
 	/* 56 */ INFILTRATOR_FRAGMENT,
 	/* 57 */ MILEAGE_COIN,
 	/* 58 */ CALLING_CHIP,
+	/* 59 */ STELLAR_COIN,
 }

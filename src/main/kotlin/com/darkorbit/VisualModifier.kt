@@ -142,4 +142,7 @@ enum class VisualModifier {
 	/* 138 */ BOSS_ENERGY_BAY_EMP,
 	/* 139 */ BOSS_ENERGY_BAY_SHIELD_LINK,
 	/* 140 */ BOSS_LEVELED_SHIELD,
+	/* 141 */ EXIT_AREA,
+	/* 142 */ SPOT_LIGHT,
+	/* 143 */ SHOW_NUMBER,
 }
