@@ -21,6 +21,6 @@ interface HangarShipEquipmentInventoryItem : ProtocolPacket {
 	var setBonusActiveConfig1: Boolean
 	var setBonusActiveConfig2: Boolean
 	var setBonusAmt: Int
-	var setBonusInfo: MutableList<String>
+	var setBonusInfo: MutableList<SetBonusInfo>
 	var ships: String
 }

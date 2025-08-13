@@ -6,4 +6,5 @@ interface StrikeAndExitInfoCommand : ProtocolPacket {
 	var inDouble: Boolean
 	var inSession: Boolean
 	var nextOpenSeconds: Int
+	var vip: Boolean
 }

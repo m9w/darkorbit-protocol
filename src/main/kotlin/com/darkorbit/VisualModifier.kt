@@ -145,4 +145,5 @@ enum class VisualModifier {
 	/* 141 */ EXIT_AREA,
 	/* 142 */ SPOT_LIGHT,
 	/* 143 */ SHOW_NUMBER,
+	/* 144 */ RAGE,
 }

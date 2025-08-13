@@ -9,6 +9,7 @@ interface StrikeAndExitMapInfoCommand : ProtocolPacket {
 	var nextSpawnSeconds: Int
 	var npcRemainingQuantity: MutableList<Int>
 	var npcTypes: MutableList<Int>
+	var remainingTime: Int
 	var spotLightUserName: String
 	var spotLightUserX: Int
 	var spotLightUserY: Int

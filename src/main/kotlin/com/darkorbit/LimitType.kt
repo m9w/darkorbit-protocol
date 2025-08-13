@@ -5,4 +5,5 @@ enum class LimitType {
 	/* 1 */ daily,
 	/* 2 */ weekly,
 	/* 3 */ monthly,
+	/* 4 */ eventLimited,
 }
