@@ -1,5 +1,5 @@
 {
-  "hash": "844a513b5eac794011b02c24c5e0c4ff",
+  "hash": "8051b0b9c5c85adac88ab969f516a9de",
   "Enums#0": {
     "CombatStateType": [
       "TARGET_OUT_OF_RANGE",
@@ -1875,8 +1875,7 @@
       "SET_BONUS_ABILITY_FERVOR",
       "SET_BONUS_ATTRIBUTE_LF5_LDN",
       "SET_BONUS_SLOW_TARGET",
-      "LASER_DAMAGE_PLAYER",
-      "SET_BONUS_STRIKE_DAMAGE"
+      "SET_BONUS_STRIKE_RATE"
     ],
     "TradeType": [
       "INACTIVE",
