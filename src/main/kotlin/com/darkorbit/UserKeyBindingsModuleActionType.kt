@@ -18,4 +18,5 @@ enum class UserKeyBindingsModuleActionType {
 	/* 14 */ FOCUS_CHAT,
 	/* 15 */ TOGGLE_CATEGORY_BAR,
 	/* 16 */ TOGGLE_PRO_ACTION_BAR,
+	/* 17 */ AUTO_ACTION_BAR,
 }
