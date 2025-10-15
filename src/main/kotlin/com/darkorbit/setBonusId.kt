@@ -6,4 +6,5 @@ enum class setBonusId {
 	/* 2 */ SET_BONUS_ATTRIBUTE_LF5_LDN,
 	/* 3 */ SET_BONUS_SLOW_TARGET,
 	/* 4 */ SET_BONUS_STRIKE_RATE,
+	/* 5 */ SET_BONUS_ATTRIBUTE_LF5_LD,
 }
