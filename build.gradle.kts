@@ -1,4 +1,4 @@
-version = "1.1.68"
+version = "1.1.69"
 group = "com.github.m9w"
 
 plugins { `maven-publish`; kotlin("jvm") version "2.1.20" }
