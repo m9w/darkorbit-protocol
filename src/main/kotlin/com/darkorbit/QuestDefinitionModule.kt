@@ -6,6 +6,7 @@ interface QuestDefinitionModule : ProtocolPacket {
 	var portraitId: String
 	var rewards: MutableList<LootModule>
 	var rootCase: QuestCaseModule
+	var star: Int
 	var textKeyFoundation: String
 	var types: MutableList<QuestTypeModule>
 }

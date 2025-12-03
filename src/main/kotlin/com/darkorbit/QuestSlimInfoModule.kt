@@ -9,6 +9,7 @@ interface QuestSlimInfoModule : ProtocolPacket {
 	var priority: Int
 	var questId: Int
 	var rootCaseId: Int
+	var star: Int
 	var textKeyFoundation: String
 	var types: MutableList<QuestTypeModule>
 }

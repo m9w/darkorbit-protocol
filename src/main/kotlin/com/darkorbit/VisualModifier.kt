@@ -146,4 +146,5 @@ enum class VisualModifier {
 	/* 142 */ SPOT_LIGHT,
 	/* 143 */ SHOW_NUMBER,
 	/* 144 */ RAGE,
+	/* 145 */ CANNON_SKILL_CORROSIVE,
 }

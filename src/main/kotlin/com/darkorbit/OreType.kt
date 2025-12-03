@@ -62,4 +62,6 @@ enum class OreType {
 	/* 58 */ CALLING_CHIP,
 	/* 59 */ STELLAR_COIN,
 	/* 60 */ NEUTRON_SHARD,
+	/* 61 */ ARMORY_TOKEN,
+	/* 62 */ ARMORY_TOKEN_MEGA,
 }
