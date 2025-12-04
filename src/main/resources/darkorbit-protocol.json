@@ -5762,8 +5762,8 @@
     "category": "String",
     "limitType": "Enum:LimitType",
     "expiresSeconds": "i32/8",
-    "isPaymentItem": "i32/-1",
-    "maxlevel": "i32/11",
+    "isPaymentItem": "i32/25",
+    "maxlevel": "i32/19",
     "discountPercent": "String",
     "canBeSubscribedTo": "Boolean",
     "elite": "i32/25"
