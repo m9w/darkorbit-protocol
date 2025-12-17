@@ -1,7 +1,8 @@
 package com.darkorbit
 
 interface LootProbabilityModule : ProtocolPacket {
-	var lootAmount: Int
 	var lootId: String
+	var maxLootAmount: Int
+	var minLootAmount: Int
 	var probabilityPercentage: Double
 }
