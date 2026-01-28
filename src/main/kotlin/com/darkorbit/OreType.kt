@@ -66,4 +66,7 @@ enum class OreType {
 	/* 62 */ ARMORY_TOKEN_MEGA,
 	/* 63 */ PULSE_CORE,
 	/* 64 */ GALAXY_COUPON,
+	/* 65 */ QUANTUM_PRISM,
+	/* 66 */ TRINITY_TOKEN,
+	/* 67 */ XYRALITH,
 }
