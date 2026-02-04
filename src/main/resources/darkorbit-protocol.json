@@ -1,5 +1,5 @@
 {
-  "hash": "34376f65c390ef49725ed4891b2f286d",
+  "hash": "66fea8683a69793546c5aed6e2845576",
   "Enums#0": {
     "CombatStateType": [
       "TARGET_OUT_OF_RANGE",
@@ -703,7 +703,11 @@
       "SPOT_LIGHT",
       "SHOW_NUMBER",
       "RAGE",
-      "CANNON_SKILL_CORROSIVE"
+      "CANNON_SKILL_CORROSIVE",
+      "CHSP_UP",
+      "SPCP_UP",
+      "CHSP_W_UP",
+      "SPCP_W_UP"
     ],
     "SectorControlMatchOverviewModuleMatchState": [
       "MATCH_MAKING",
@@ -1546,7 +1550,8 @@
       "PYROSPIRE",
       "SPORE_STALKER",
       "VEIL_STALKER",
-      "VINESPIRE"
+      "VINESPIRE",
+      "RETIARUS_PLUS"
     ],
     "HeatState": [
       "GAINING_HEAT",
