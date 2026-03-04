@@ -3700,7 +3700,7 @@
     "playersOfOwnFaction": "i32/12",
     "maxPlayerPerFaction": "i32/24",
     "remainingTickets": "i32/1",
-    "totalTickets": "i32/-1",
+    "totalTickets": "i32/31",
     "playersInQueue": "i32/7"
   },
   "SectorControlMatchDetailRequest#524": {
