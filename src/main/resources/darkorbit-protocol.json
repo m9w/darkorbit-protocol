@@ -1,5 +1,5 @@
 {
-  "hash": "b736c845edaee25412b7c77bec2e643f",
+  "hash": "aaafcbd53badbb2bb0cda5db5c2fbe8b",
   "Enums#0": {
     "CombatStateType": [
       "TARGET_OUT_OF_RANGE",
@@ -5316,16 +5316,16 @@
     "bossCount": "i32/9"
   },
   "ClanAllInfoCommand#14249": {
-    "myClanDiploReqInfoCommands": "List:ClanDiploReqInfoCommand",
+    "myClanDiploReqInfoCommands": "List2:ClanDiploReqInfoCommand",
     "clanTaxInfoCommand": "ClanTaxInfoCommand",
-    "clanMessageInfoCommands": "List:ClanMessageInfoCommand",
+    "clanMessageInfoCommands": "List2:ClanMessageInfoCommand",
     "companyDateInfoCommand": "CompanyDateInfoCommand",
-    "clanDiploInfoCommands": "List:ClanDiploInfoCommand",
-    "clanMemberInfoCommandList": "List:ClanMemberInfoCommand",
-    "clanNewsInfoCommands": "List:ClanNewsInfoCommand",
+    "clanDiploInfoCommands": "List2:ClanDiploInfoCommand",
+    "clanMemberInfoCommandList": "List2:ClanMemberInfoCommand",
+    "clanNewsInfoCommands": "List2:ClanNewsInfoCommand",
     "clanInfoCommand": "ClanInfoCommand",
     "clanRankInfoCommands": "List:ClanRankInfoCommand",
-    "clanDiploReqInfoCommands": "List:ClanDiploReqInfoCommand",
+    "clanDiploReqInfoCommands": "List2:ClanDiploReqInfoCommand",
     "clanApplyInfoListCommand": "ClanApplyInfoListCommand"
   },
   "ContactListEntryTypeCommand#14332": {
@@ -6337,7 +6337,7 @@
     "rankRewards": "List:RankRewardRangeModule"
   },
   "ClanApplyInfoListCommand#28347": {
-    "applyClanInfoCommandList": "List:ClanApplyInfoCommand"
+    "applyClanInfoCommandList": "List2:ClanApplyInfoCommand"
   },
   "ClanTaxLogCommand#28469": {
     "moneyType": "String",
