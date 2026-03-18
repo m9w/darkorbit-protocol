@@ -6594,7 +6594,7 @@
   "CaptchaResolvedCommand#31140": {},
   "UnstableModulesShardCommand#31152": {
     "chipLeft": "i32/26",
-    "shardsLeft": "i32/18"
+    "shardsLeft": "i32/-1"
   },
   "BattlePassUpdateStatusCommand#31259": {
     "purchased": "Boolean",
@@ -8609,7 +8609,7 @@
   },
   "TrainingGroundFightInfoCommand#60151": {
     "opponentHitpointsMax": "i32/13",
-    "playerVictoryPoint": "i32/23",
+    "playerVictoryPoint": "i32/7",
     "playerHitpointsMax": "i32/10",
     "playerHitpoints": "i32/13",
     "playerShield": "i32/16",
