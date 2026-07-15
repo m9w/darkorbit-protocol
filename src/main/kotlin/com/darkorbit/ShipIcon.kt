@@ -393,4 +393,6 @@ enum class ShipIcon {
 	/* 389 */ VEIL_STALKER,
 	/* 390 */ VINESPIRE,
 	/* 391 */ RETIARUS_PLUS,
+	/* 392 */ BOSS_VOIDMARE,
+	/* 393 */ VOYAGERS_WHISPER,
 }

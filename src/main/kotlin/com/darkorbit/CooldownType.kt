@@ -62,4 +62,5 @@ enum class CooldownType {
 	/* 58 */ EMOTE,
 	/* 59 */ MINE_AGL,
 	/* 60 */ CANNON_GOBAL_COOLDOWN,
+	/* 61 */ DRIVE_GOBAL_COOLDOWN,
 }

@@ -69,4 +69,5 @@ enum class OreType {
 	/* 65 */ QUANTUM_PRISM,
 	/* 66 */ TRINITY_TOKEN,
 	/* 67 */ XYRALITH,
+	/* 68 */ VOYAGERS_TOKEN,
 }

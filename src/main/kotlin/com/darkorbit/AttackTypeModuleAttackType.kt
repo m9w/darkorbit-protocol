@@ -23,4 +23,5 @@ enum class AttackTypeModuleAttackType {
 	/* 19 */ HEAT_RELEASE,
 	/* 20 */ MULTIPLE_ROCKET,
 	/* 21 */ CANNON,
+	/* 22 */ DRIVE,
 }

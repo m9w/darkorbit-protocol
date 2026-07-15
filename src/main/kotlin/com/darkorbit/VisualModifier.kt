@@ -151,4 +151,10 @@ enum class VisualModifier {
 	/* 147 */ SPCP_UP,
 	/* 148 */ CHSP_W_UP,
 	/* 149 */ SPCP_W_UP,
+	/* 150 */ DA_OUTER_ENEMY_01,
+	/* 151 */ DA_OUTER_FRIENDLY_01,
+	/* 152 */ DA_OUTER_ENEMY_02,
+	/* 153 */ DA_OUTER_FRIENDLY_02,
+	/* 154 */ DA_OUTER_ENEMY_03,
+	/* 155 */ DA_OUTER_FRIENDLY_03,
 }
