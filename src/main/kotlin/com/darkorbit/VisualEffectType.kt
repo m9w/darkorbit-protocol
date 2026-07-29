@@ -1,0 +1,25 @@
+package com.darkorbit
+
+enum class VisualEffectType {
+	/* 0 */ CPU_PLAGUE_CURE_WAS_USED,
+	/* 1 */ PLAGUE_IMPACT,
+	/* 2 */ LONG_RANGE_LASER_ATTACK_PLAGUE,
+	/* 3 */ NORMAL_LASER_ATTACK_PLAGUE,
+	/* 4 */ LEECH_ATTACK_PLAGUE,
+	/* 5 */ SHIELD_LEECH,
+	/* 6 */ PET_FRIENDLY_SACRIFICE_EXPLOSION,
+	/* 7 */ LEECH_ATTACK_SHIELD,
+	/* 8 */ CANNON_SKILL_THERMAL,
+	/* 9 */ CANNON_SKILL_ELECTRO,
+	/* 10 */ SOLACE,
+	/* 11 */ CHSP_SHOT,
+	/* 12 */ CHSP_OUT_BREAK,
+	/* 13 */ CHSP_HIT,
+	/* 14 */ CHSP_W_SHOT,
+	/* 15 */ CHSP_W_OUT_BREAK,
+	/* 16 */ CHSP_W_HIT,
+	/* 17 */ DA_SHOT_01,
+	/* 18 */ DA_SHOT_02,
+	/* 19 */ DA_SHOT_03,
+	/* 20 */ GRAVITATIONAL_ANCHOR_SHOT,
+}

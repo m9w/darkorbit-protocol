@@ -395,4 +395,5 @@ enum class ShipIcon {
 	/* 391 */ RETIARUS_PLUS,
 	/* 392 */ BOSS_VOIDMARE,
 	/* 393 */ VOYAGERS_WHISPER,
+	/* 394 */ HYPERION,
 }

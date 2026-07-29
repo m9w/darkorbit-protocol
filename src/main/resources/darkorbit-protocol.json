@@ -1,5 +1,5 @@
 {
-  "hash": "8dbaf3b7c6d193330a0d6f8a3528d15a",
+  "hash": "504b1f0c71daa86850da8310cc48b4ec",
   "Enums#0": {
     "CombatStateType": [
       "TARGET_OUT_OF_RANGE",
@@ -715,7 +715,8 @@
       "DA_OUTER_ENEMY_02",
       "DA_OUTER_FRIENDLY_02",
       "DA_OUTER_ENEMY_03",
-      "DA_OUTER_FRIENDLY_03"
+      "DA_OUTER_FRIENDLY_03",
+      "GRAVITATIONAL_ANCHOR_ACTIVATE"
     ],
     "SectorControlMatchOverviewModuleMatchState": [
       "MATCH_MAKING",
@@ -1514,7 +1515,8 @@
       "VINESPIRE",
       "RETIARUS_PLUS",
       "BOSS_VOIDMARE",
-      "VOYAGERS_WHISPER"
+      "VOYAGERS_WHISPER",
+      "HYPERION"
     ],
     "ExchangeShopRequestAction": [
       "shops",
@@ -1691,7 +1693,8 @@
       "QUANTUM_PRISM",
       "TRINITY_TOKEN",
       "XYRALITH",
-      "VOYAGERS_TOKEN"
+      "VOYAGERS_TOKEN",
+      "ETHER_SHARD"
     ],
     "DisplayTarget": [
       "LOG",
@@ -2274,6 +2277,29 @@
     "InvitationMode": [
       "BOSS_ONLY",
       "FREE_FOR_ALL"
+    ],
+    "VisualEffectType": [
+      "CPU_PLAGUE_CURE_WAS_USED",
+      "PLAGUE_IMPACT",
+      "LONG_RANGE_LASER_ATTACK_PLAGUE",
+      "NORMAL_LASER_ATTACK_PLAGUE",
+      "LEECH_ATTACK_PLAGUE",
+      "SHIELD_LEECH",
+      "PET_FRIENDLY_SACRIFICE_EXPLOSION",
+      "LEECH_ATTACK_SHIELD",
+      "CANNON_SKILL_THERMAL",
+      "CANNON_SKILL_ELECTRO",
+      "SOLACE",
+      "CHSP_SHOT",
+      "CHSP_OUT_BREAK",
+      "CHSP_HIT",
+      "CHSP_W_SHOT",
+      "CHSP_W_OUT_BREAK",
+      "CHSP_W_HIT",
+      "DA_SHOT_01",
+      "DA_SHOT_02",
+      "DA_SHOT_03",
+      "GRAVITATIONAL_ANCHOR_SHOT"
     ],
     "DispatchMessageCommandMessageType": [
       "DISPATCH_SUCCESS_SEND_RETRIEVER",
@@ -8170,7 +8196,7 @@
   },
   "PlayVisualEffectCommand#55059": {
     "activatorId": "i32/12",
-    "visualEffect": "String",
+    "visualEffect": "Enum:VisualEffectType",
     "targetIds": "List:i32/23"
   },
   "UserMessageGetTargetCommand#55124": {
