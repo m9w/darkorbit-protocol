@@ -1,5 +1,5 @@
 {
-  "hash": "8cf182a32819e300e1eb9a70b579d58c",
+  "hash": "0994fb6ea86f9b16058e2e9284c16608",
   "Enums#0": {
     "CombatStateType": [
       "TARGET_OUT_OF_RANGE",
@@ -632,6 +632,7 @@
       "MAYHEM_WINNER_SPECIAL_EFFECT",
       "MAYHEM_RAMPAGE_SPECIAL_EFFECT",
       "COUNTDOWN",
+      "TIMER_COUNTDOWN",
       "EXPLOSIVE_CHARGING_BLOB",
       "PARTICLE_BEAM",
       "INVADER",
