@@ -49,12 +49,10 @@ jobs:
           }
 
       - name: Download client
-        run: curl -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version$env:VERSION.zip
-
-      - name: Unzip client
+        shell: pwsh
         run: |
-          unzip client.zip
-          Rename-Item -path ".\DarkOrbit_*" -NewName "client"
+          Start-BitsTransfer -Source "https://$($env:DOMAIN)/release/archive/DarkOrbit_Version$($env:VERSION).zip" -Destination "client.zip"
+
 
       - name: Set up Python 3
         uses: actions/setup-python@v5
