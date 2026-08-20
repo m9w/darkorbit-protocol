@@ -16,7 +16,7 @@ permissions:
   
 jobs:
   get_protocol_structure:
-    timeout-minutes: 15
+    timeout-minutes: 60
     runs-on: windows-latest
 
     env:
@@ -51,8 +51,20 @@ jobs:
       - name: Download client
         shell: pwsh
         run: |
-          Start-BitsTransfer -Source "https://$($env:DOMAIN)/release/archive/DarkOrbit_Version$($env:VERSION).zip" -Destination "client.zip"
-
+          $url = "https://$($env:DOMAIN)/release/archive/DarkOrbit_Version$($env:version).zip"
+          $output = "client.zip"
+          
+          do {
+              curl.exe -L -C - --fail-early --connect-timeout 30 -o $output $url
+              $exitCode = $LASTEXITCODE
+              
+              if ($exitCode -ne 0) {
+                  Write-Host "Загрузка прервалась (код $exitCode). Повторная попытка через 5 секунд..."
+                  Start-Sleep -Seconds 5
+              }
+          } while ($exitCode -ne 0)
+          
+          Write-Host "Файл успешно и полностью загружен!"
 
       - name: Set up Python 3
         uses: actions/setup-python@v5
