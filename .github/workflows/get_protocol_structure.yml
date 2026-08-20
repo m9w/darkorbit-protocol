@@ -48,30 +48,11 @@ jobs:
               Write-Output "✅ Tag '${env:version}' does not exist. Proceeding."
           }
 
+      - name: Install aria2
+        run: choco install aria2 -y
+
       - name: Download client
-        shell: pwsh
-        run: |
-          if (-not (Test-Path "aria2c.exe")) {
-              Write-Host "Install aria2c..."
-              $aria2Url = "https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0-win-64bit-build1.zip"
-              Invoke-WebRequest -Uri $aria2Url -OutFile "aria2.zip"
-              Expand-Archive -Path "aria2.zip" -DestinationPath "aria2_extracted"
-              Move-Item "aria2_extracted\aria2-1.37.0-win-64bit-build1\aria2c.exe" .\aria2c.exe
-          }
-        
-          $url = "https://$($env:DOMAIN)/release/archive/DarkOrbit_Version$($env:version).zip"
-          $output = "client.zip"
-
-          .\aria2c.exe -x 16 -s 16 -j 16 --retry-wait=2 --allow-overwrite=true -o $output $url
-          
-          if ($LASTEXITCODE -eq 0) {
-              Write-Host "Done"
-          } else {
-              Write-Error "Error $LASTEXITCODE"
-              exit 1
-          }
-
-
+        run: aria2c -x 16 -s 16 -j 16 --retry-wait=2 --allow-overwrite=true -o "client.zip" "$($env:CDN)"
 
       - name: Set up Python 3
         uses: actions/setup-python@v5
