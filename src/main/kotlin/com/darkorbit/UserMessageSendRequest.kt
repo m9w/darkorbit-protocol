@@ -2,6 +2,7 @@ package com.darkorbit
 
 interface UserMessageSendRequest : ProtocolPacket {
 	var body: String
+	var hCaptchaToken: String
 	var parentId: Int
 	var parentType: Int
 	var recipientType: String
