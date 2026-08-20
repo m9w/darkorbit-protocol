@@ -52,7 +52,7 @@ jobs:
         run: choco install aria2 -y
 
       - name: Download client
-        run: aria2c -x 16 -s 16 -j 16 --retry-wait=2 --allow-overwrite=true -o "client.zip" "$($env:CDN)"
+        run: aria2c -x 16 -s 16 -j 16 --retry-wait=2 --allow-overwrite=true -o client.zip ${{ secrets.CDN }}
 
       - name: Set up Python 3
         uses: actions/setup-python@v5
