@@ -54,6 +54,11 @@ jobs:
       - name: Download client
         run: aria2c -x 16 -s 16 -j 16 --retry-wait=2 --allow-overwrite=true -o client.zip ${{ secrets.CDN }}
 
+      - name: Unzip client
+        run: |
+          unzip client.zip
+          Rename-Item -path ".\DarkOrbit_*" -NewName "client"
+
       - name: Set up Python 3
         uses: actions/setup-python@v5
         with:
