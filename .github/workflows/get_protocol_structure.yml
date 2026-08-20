@@ -54,17 +54,21 @@ jobs:
           $url = "https://$($env:DOMAIN)/release/archive/DarkOrbit_Version$($env:version).zip"
           $output = "client.zip"
           
+          $ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+          
           do {
-              curl.exe -L -C - --fail-early --connect-timeout 30 -o $output $url
+              curl.exe -L -C - --fail-early --connect-timeout 15 --keepalive-time 10 -A $ua -o $output $url
               $exitCode = $LASTEXITCODE
               
               if ($exitCode -ne 0) {
-                  Write-Host "Загрузка прервалась (код $exitCode). Повторная попытка через 5 секунд..."
-                  Start-Sleep -Seconds 5
+                  $size = (Get-Item -Path $output -ErrorAction SilentlyContinue).Length
+                  Write-Host "Разрыв связи. Скачано: [ $size байт ]. Переподключение..."
+                  Start-Sleep -Seconds 1
               }
           } while ($exitCode -ne 0)
           
           Write-Host "Файл успешно и полностью загружен!"
+
 
       - name: Set up Python 3
         uses: actions/setup-python@v5
