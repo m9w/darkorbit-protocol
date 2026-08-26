@@ -7,6 +7,12 @@ on:
         description: 'Optional version'
         required: false
         type: string
+      use_cdn:
+        description: 'Use CDN'
+        required: false
+        type: boolean
+        default: true
+
   issues:
     types:
       - opened
@@ -51,8 +57,13 @@ jobs:
       - name: Install aria2
         run: choco install aria2 -y
 
-      - name: Download client
+      - name: Download client Direct
+        if: ${{ inputs.use_cdn == true }}
         run: aria2c -x 8 -s 16 -j 8 --retry-wait=2 --allow-overwrite=true -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version$env:VERSION.zip
+
+      - name: Download client from CDN
+        if: ${{ inputs.use_cdn == true }}
+        run: aria2c -x 8 -s 16 -j 8 --retry-wait=2 --allow-overwrite=true -o client.zip ${{ secrets.CDN }}
 
       - name: Unzip client
         run: |
