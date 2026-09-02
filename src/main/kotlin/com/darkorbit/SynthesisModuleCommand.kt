@@ -5,4 +5,5 @@ interface SynthesisModuleCommand : ProtocolPacket {
 	var costs: MutableList<SynthesisCostLootCommand>
 	var lootId: String
 	var moduleGroupType: String
+	var star: Int
 }
