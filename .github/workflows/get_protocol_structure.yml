@@ -58,7 +58,7 @@ jobs:
         run: choco install aria2 -y
 
       - name: Download client Direct
-        if: ${{ inputs.use_cdn == true }}
+        if: ${{ inputs.use_cdn == false }}
         run: aria2c -x 8 -s 16 -j 8 --retry-wait=2 --allow-overwrite=true -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version$env:VERSION.zip
 
       - name: Download client from CDN
