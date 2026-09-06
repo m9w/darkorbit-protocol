@@ -1,6 +1,7 @@
 package com.darkorbit
 
 interface SynthesisGroupCommand : ProtocolPacket {
+	var button: String
 	var group: String
-	var modules: MutableList<SynthesisModuleCommand>
+	var moduleList: MutableList<SynthesisModuleListCommand>
 }

@@ -6,6 +6,7 @@ interface HangarShipEquipmentInventoryItem : ProtocolPacket {
 	var attachedAmmo: String
 	var charges: Int
 	var currentHitPoints: Int
+	var extAttributes: MutableList<TupleTwoModule>
 	var hangarId: Long
 	var isUnstableShipUpgrade: Boolean
 	var itemCount: Long
@@ -23,4 +24,5 @@ interface HangarShipEquipmentInventoryItem : ProtocolPacket {
 	var setBonusAmt: Int
 	var setBonusInfo: MutableList<SetBonusInfo>
 	var ships: String
+	var star: Int
 }
