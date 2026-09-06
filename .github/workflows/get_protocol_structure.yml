@@ -30,12 +30,12 @@ jobs:
       #     fetch-depth: 0
       #     persist-credentials: true
 
-      # - name: Set version
-      #   shell: pwsh
-      #   run: |
-      #     $version = "${{ inputs.version }}"
-      #     if (-not $version) { $version = Invoke-RestMethod -Uri "https://${env:DOMAIN}/vc/current.txt" -UseBasicParsing }
-      #     Write-Output "version=$version" >> $env:GITHUB_ENV
+      - name: Set version
+        shell: pwsh
+        run: |
+          $version = "${{ inputs.version }}"
+          if (-not $version) { $version = Invoke-RestMethod -Uri "https://${env:DOMAIN}/vc/current.txt" -UseBasicParsing }
+          Write-Output "version=$version" >> $env:GITHUB_ENV
 
       # - name: Validate tag does not already exist
       #   shell: pwsh
@@ -49,21 +49,23 @@ jobs:
       #         Write-Output "✅ Tag '${env:version}' does not exist. Proceeding."
       #     }
 
-      - name: Install and configure Cloudflare WARP
+      - name: Install Cloudflare WARP
+        shell: pwsh
+        run: choco install warp -y
+          
+      - name: Сonfigure Cloudflare WARP
         shell: pwsh
         run: |
-          winget install Cloudflare.WARP --silent --accept-source-agreements --accept-package-agreements
-          $warp = "${env:ProgramFiles}\Cloudflare\Cloudflare WARP\warp-cli.exe"
-          & $warp registration new
-          & $warp mode proxy
-          & $warp proxy port 1080
-          & $warp connect
-
+          warp-cli registration new
+          warp-cli mode proxy
+          warp-cli proxy port 1080
+          warp-cli connect
+          
       - name: Install aria2
         run: choco install aria2 -y
 
       - name: Download client
-        run: aria2c -x 8 -s 16 -j 8 --retry-wait=2 --all-proxy="socks5://127.0.0.1:1080" --allow-overwrite=true -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version$env:VERSION.zip
+        run: aria2c -x 8 -s 16 -j 8 --retry-wait=2 --socks5-proxy="127.0.0.1:1080" --allow-overwrite=true -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version$env:VERSION.zip
 
       - name: Unzip client
         run: |
