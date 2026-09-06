@@ -66,7 +66,7 @@ jobs:
         run: choco install aria2 -y
 
       - name: Download client
-        run: aria2c -x 8 -s 16 -j 8 --retry-wait=2 --all-proxy="http://127.0.0.1:3128" --allow-overwrite=true -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version$env:VERSION.zip
+        run: aria2c -x 8 -s 16 -j 8 --retry-wait=2 --all-proxy="http://127.0.0.1:3128" --file-allocation=none --allow-overwrite=true -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version$env:VERSION.zip
 
       - name: Unzip client
         run: |
