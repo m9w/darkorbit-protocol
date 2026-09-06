@@ -56,7 +56,7 @@ jobs:
       - name: Сonfigure Cloudflare WARP
         shell: pwsh
         run: |
-          refreshenv
+          $env:PATH += ";${env:ProgramFiles}\Cloudflare\Cloudflare WARP\"
           warp-cli registration new
           warp-cli mode proxy
           warp-cli proxy port 1080
