@@ -7,11 +7,6 @@ on:
         description: 'Optional version'
         required: false
         type: string
-      use_cdn:
-        description: 'Use CDN'
-        required: false
-        type: boolean
-        default: true
 
   issues:
     types:
@@ -29,44 +24,52 @@ jobs:
       DOMAIN: ${{ secrets.domain }}
 
     steps:
-      - name: Checkout current repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          persist-credentials: true
+      # - name: Checkout current repository
+      #   uses: actions/checkout@v4
+      #   with:
+      #     fetch-depth: 0
+      #     persist-credentials: true
 
-      - name: Set version
+      # - name: Set version
+      #   shell: pwsh
+      #   run: |
+      #     $version = "${{ inputs.version }}"
+      #     if (-not $version) { $version = Invoke-RestMethod -Uri "https://${env:DOMAIN}/vc/current.txt" -UseBasicParsing }
+      #     Write-Output "version=$version" >> $env:GITHUB_ENV
+
+      # - name: Validate tag does not already exist
+      #   shell: pwsh
+      #   run: |
+      #     git fetch --tags
+      #     $existingTags = git tag --list
+      #     if ($existingTags -contains "${env:version}") {
+      #         throw "❌ Error: Tag '${env:version}' already exists!"
+      #     }
+      #     else {
+      #         Write-Output "✅ Tag '${env:version}' does not exist. Proceeding."
+      #     }
+
+      - name: Install and configure Cloudflare WARP
         shell: pwsh
         run: |
-          $version = "${{ inputs.version }}"
-          if (-not $version) { $version = Invoke-RestMethod -Uri "https://${env:DOMAIN}/vc/current.txt" -UseBasicParsing }
-          Write-Output "version=$version" >> $env:GITHUB_ENV
-
-      - name: Validate tag does not already exist
-        shell: pwsh
-        run: |
-          git fetch --tags
-          $existingTags = git tag --list
-          if ($existingTags -contains "${env:version}") {
-              throw "❌ Error: Tag '${env:version}' already exists!"
-          }
-          else {
-              Write-Output "✅ Tag '${env:version}' does not exist. Proceeding."
-          }
+          iwr "https://1.1.1" -OutFile "warp.msi"
+          msiexec /i warp.msi /qn /norestart /wait
+          
+          $warp = "${env:ProgramFiles}\Cloudflare\Cloudflare WARP\warp-cli.exe"
+          & $warp registration new
+          & $warp mode proxy
+          & $warp proxy port 1080
+          & $warp connect
 
       - name: Install aria2
         run: choco install aria2 -y
 
-      - name: Download client Direct
-        if: ${{ inputs.use_cdn == false }}
-        run: aria2c -x 8 -s 16 -j 8 --retry-wait=2 --allow-overwrite=true -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version$env:VERSION.zip
-
-      - name: Download client from CDN
-        if: ${{ inputs.use_cdn == true }}
-        run: aria2c -x 8 -s 16 -j 8 --retry-wait=2 --allow-overwrite=true -o client.zip ${{ secrets.CDN }}
+      - name: Download client
+        run: aria2c -x 8 -s 16 -j 8 --retry-wait=2 --all-proxy="socks5://127.0.0.1:1080" --allow-overwrite=true -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version$env:VERSION.zip
 
       - name: Unzip client
         run: |
+          exit(-1)
           unzip client.zip
           Rename-Item -path ".\DarkOrbit_*" -NewName "client"
 
