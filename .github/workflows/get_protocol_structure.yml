@@ -59,14 +59,14 @@ jobs:
           $env:PATH += ";${env:ProgramFiles}\Cloudflare\Cloudflare WARP\"
           warp-cli registration new
           warp-cli mode proxy
-          warp-cli proxy port 1080
+          warp-cli proxy port 3128
           warp-cli connect
           
       - name: Install aria2
         run: choco install aria2 -y
 
       - name: Download client
-        run: aria2c -x 8 -s 16 -j 8 --retry-wait=2 --socks5-proxy="127.0.0.1:1080" --allow-overwrite=true -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version$env:VERSION.zip
+        run: aria2c -x 8 -s 16 -j 8 --retry-wait=2 --all-proxy="http://127.0.0.1:3128" --allow-overwrite=true -o client.zip https://${env:DOMAIN}/release/archive/DarkOrbit_Version$env:VERSION.zip
 
       - name: Unzip client
         run: |
