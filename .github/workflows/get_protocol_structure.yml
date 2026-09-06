@@ -52,9 +52,7 @@ jobs:
       - name: Install and configure Cloudflare WARP
         shell: pwsh
         run: |
-          iwr "https://1.1.1" -OutFile "warp.msi"
-          msiexec /i warp.msi /qn /norestart /wait
-          
+          winget install Cloudflare.WARP --silent --accept-source-agreements --accept-package-agreements
           $warp = "${env:ProgramFiles}\Cloudflare\Cloudflare WARP\warp-cli.exe"
           & $warp registration new
           & $warp mode proxy
