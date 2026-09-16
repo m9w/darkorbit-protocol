@@ -71,4 +71,5 @@ enum class OreType {
 	/* 67 */ XYRALITH,
 	/* 68 */ VOYAGERS_TOKEN,
 	/* 69 */ ETHER_SHARD,
+	/* 70 */ OUROBOROS_ALLOY,
 }

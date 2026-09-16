@@ -49,4 +49,5 @@ enum class AmmunitionTypeModuleAmmunitionType {
 	/* 45 */ RIC3,
 	/* 46 */ PIR_100,
 	/* 47 */ K300M,
+	/* 48 */ OBR_100,
 }
