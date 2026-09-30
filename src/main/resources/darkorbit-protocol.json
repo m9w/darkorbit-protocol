@@ -1,5 +1,5 @@
 {
-  "hash": "43e9184871f4b91cc4158e5c5bef3d3f",
+  "hash": "bd171f1aac49f58dde9ed1e00e539553",
   "Enums#0": {
     "CombatStateType": [
       "TARGET_OUT_OF_RANGE",
@@ -3698,7 +3698,7 @@
   },
   "ShipWarpWindowCommand#291": {
     "jumpVoucherCount": "i32/18",
-    "uridium": "i32/20",
+    "uridium": "i64",
     "isNearSpacestation": "Boolean",
     "ships": "List:ShipWarpModule"
   },
