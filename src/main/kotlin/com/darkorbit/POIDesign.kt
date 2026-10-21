@@ -17,4 +17,5 @@ enum class POIDesign {
 	/* 13 */ SIMPLE_LOW_ONLY,
 	/* 14 */ Z_GATE_ASTEROIDS,
 	/* 15 */ Z_GATE_ASTEROIDS_SPARSE,
+	/* 16 */ Z_GATE_ASTEROIDS_ICE,
 }

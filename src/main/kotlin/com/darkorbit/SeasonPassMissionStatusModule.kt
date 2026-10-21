@@ -1,5 +1,5 @@
 package com.darkorbit
 
 interface SeasonPassMissionStatusModule : ProtocolPacket {
-	var type: MissionStatusType
+	var type: SeasonPassMissionStatusModuleMissionStatusType
 }

@@ -1,5 +1,5 @@
 package com.darkorbit
 
 interface ClanRelationModule : ProtocolPacket {
-	var type: Type
+	var type: ClanRelationModuleType
 }

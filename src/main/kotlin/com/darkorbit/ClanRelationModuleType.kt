@@ -1,6 +1,6 @@
 package com.darkorbit
 
-enum class Type {
+enum class ClanRelationModuleType {
 	/* 0 */ NONE,
 	/* 1 */ ALLIED,
 	/* 2 */ NON_AGGRESSION_PACT,
