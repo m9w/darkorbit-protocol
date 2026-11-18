@@ -13,4 +13,5 @@ interface HangarShipEquipmentMsg : ProtocolPacket {
 	var rocket: MutableList<Int>
 	var setId: Int
 	var upgrades: MutableList<Int>
+	var xenoResonators: MutableList<XenoResonatorSlotModule>
 }
